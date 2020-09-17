@@ -1,8 +1,6 @@
 # Numerical methods variant 6
 ***
 ## Hello! I am a student of BSU and this is my laboratory work on numerical methods.
-
-### **! The code can cause attacks of uncontrolled aggression !**
 ---
 Lab titles:
   1. Solving systems of linear algebraic equations. Gauss Method.
