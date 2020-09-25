@@ -5,11 +5,9 @@ using namespace std;
 
 const double M = 0.5;
 const int NIT = 100;
-const int SIZE = 2;
 
-double **CreatingMatrix(int n, int m)
-{
-    auto** A = new double* [n];
+double **CreatingMatrix(int n, int m) {
+    auto **A = new double *[n];
     for (int i = 0; i < n; i++)
         A[i] = new double[m];
     return A;
@@ -95,7 +93,7 @@ double *GaussMethod(double **matrix, double *vec, int size) {
                 temp = matrix[i][k];
                 //if (abs(temp) < eps) continue;
                 if (abs(temp) < eps) throw "IER = 1";
-            } catch (const char* msg) {
+            } catch (const char *msg) {
                 cout << msg << '\n';
                 exit(1);
             }
@@ -143,7 +141,7 @@ double *NewtonMethod(const int SIZE, double x1, double x2) {
         nev(F, x1, x2);
         JIter(Jak, x1, x2);
 
-        for (int  i = 0; i < SIZE; ++i) b[i] = F[i];
+        for (int i = 0; i < SIZE; ++i) b[i] = F[i];
 
         delta = GaussMethod(Jak, b, SIZE);
 
@@ -167,7 +165,7 @@ double *NewtonMethod(const int SIZE, double x1, double x2) {
 
         x1 = roots[0];
         x2 = roots[1];
-        for(int i = 0; i < SIZE; i++) {
+        for (int i = 0; i < SIZE; i++) {
             cout << '|' << setw(10) << roots[i] << ' ';
         }
         cout << '|' << setw(13) << delta1 << '|' << setw(13) << delta2 << "   " << '|' << setw(2) << k;
@@ -176,17 +174,24 @@ double *NewtonMethod(const int SIZE, double x1, double x2) {
         ++k;
         try {
             if (k >= NIT) throw "IER = 2";
-        } catch (const char* msg) {
+        } catch (const char *msg) {
             cout << msg << '\n';
             exit(2);
         }
 
     } while (delta1 > EPS && delta2 > EPS);
 
+    DeletingMatrix(Jak, SIZE);
+    delete[] F;
+    delete[] roots;
+    delete[] delta;
+    delete[] b;
+
     return roots;
 }
 
 int main() {
+    const int SIZE = 2;
     double x1 = 1, x2 = 1;
 
     auto *roots = new double[SIZE];
@@ -195,4 +200,5 @@ int main() {
     for (int i = 0; i < SIZE; ++i) {
         cout << "X" << i + 1 << " = " << roots[i] << '\n';
     }
+    delete[] roots;
 }
