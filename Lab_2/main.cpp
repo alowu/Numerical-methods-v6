@@ -22,12 +22,18 @@ void DeletingMatrix(double **X, int x) {
 
 double f1(double x1, double x2) {
     return (2 * x1 * x1 * x1 - x2 * x2 - 1);
+<<<<<<< HEAD
     //return x1 * x1 * x1 + x2 * x2 * x2 - 6 * x1 + 3;//v5
+=======
+>>>>>>> 0632ca1941db92ccecb1495735039535eb36e2b7
 }
 
 double f2(double x1, double x2) {
     return (x1 * x2 * x2 * x2 - x2 - 4);
+<<<<<<< HEAD
     //return x1 * x1 * x1 - x2 * x2 * x2 - 6 * x2 + 2;//v5
+=======
+>>>>>>> 0632ca1941db92ccecb1495735039535eb36e2b7
 }
 
 double func11(double x1, double x2) {
@@ -185,6 +191,10 @@ double *NewtonMethod(const int SIZE, double x1, double x2) {
 
     DeletingMatrix(Jak, SIZE);
     delete[] F;
+<<<<<<< HEAD
+=======
+    delete[] roots;
+>>>>>>> 0632ca1941db92ccecb1495735039535eb36e2b7
     delete[] delta;
     delete[] b;
 
