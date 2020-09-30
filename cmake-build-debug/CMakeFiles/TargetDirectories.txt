@@ -1,0 +1,3 @@
+H:/CLionLabs/Numerical-methods-v6/cmake-build-debug/CMakeFiles/edit_cache.dir
+H:/CLionLabs/Numerical-methods-v6/cmake-build-debug/CMakeFiles/4islaki.dir
+H:/CLionLabs/Numerical-methods-v6/cmake-build-debug/CMakeFiles/rebuild_cache.dir

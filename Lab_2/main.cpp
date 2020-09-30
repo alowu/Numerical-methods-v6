@@ -22,10 +22,12 @@ void DeletingMatrix(double **X, int x) {
 
 double f1(double x1, double x2) {
     return (2 * x1 * x1 * x1 - x2 * x2 - 1);
+    //return x1 * x1 * x1 + x2 * x2 * x2 - 6 * x1 + 3;//v5
 }
 
 double f2(double x1, double x2) {
     return (x1 * x2 * x2 * x2 - x2 - 4);
+    //return x1 * x1 * x1 - x2 * x2 * x2 - 6 * x2 + 2;//v5
 }
 
 double func11(double x1, double x2) {

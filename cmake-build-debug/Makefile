@@ -142,32 +142,32 @@ depend:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\4islaki.dir\build.make CMakeFiles/4islaki.dir/build
 .PHONY : 4islaki/fast
 
-Lab_5/main.obj: Lab_5/main.cpp.obj
+Lab_4/main.obj: Lab_4/main.cpp.obj
 
-.PHONY : Lab_5/main.obj
+.PHONY : Lab_4/main.obj
 
 # target to build an object file
-Lab_5/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\4islaki.dir\build.make CMakeFiles/4islaki.dir/Lab_5/main.cpp.obj
-.PHONY : Lab_5/main.cpp.obj
+Lab_4/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\4islaki.dir\build.make CMakeFiles/4islaki.dir/Lab_4/main.cpp.obj
+.PHONY : Lab_4/main.cpp.obj
 
-Lab_5/main.i: Lab_5/main.cpp.i
+Lab_4/main.i: Lab_4/main.cpp.i
 
-.PHONY : Lab_5/main.i
+.PHONY : Lab_4/main.i
 
 # target to preprocess a source file
-Lab_5/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\4islaki.dir\build.make CMakeFiles/4islaki.dir/Lab_5/main.cpp.i
-.PHONY : Lab_5/main.cpp.i
+Lab_4/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\4islaki.dir\build.make CMakeFiles/4islaki.dir/Lab_4/main.cpp.i
+.PHONY : Lab_4/main.cpp.i
 
-Lab_5/main.s: Lab_5/main.cpp.s
+Lab_4/main.s: Lab_4/main.cpp.s
 
-.PHONY : Lab_5/main.s
+.PHONY : Lab_4/main.s
 
 # target to generate assembly for a file
-Lab_5/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\4islaki.dir\build.make CMakeFiles/4islaki.dir/Lab_5/main.cpp.s
-.PHONY : Lab_5/main.cpp.s
+Lab_4/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\4islaki.dir\build.make CMakeFiles/4islaki.dir/Lab_4/main.cpp.s
+.PHONY : Lab_4/main.cpp.s
 
 # Help Target
 help:
@@ -178,9 +178,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... 4islaki
-	@echo ... Lab_5/main.obj
-	@echo ... Lab_5/main.i
-	@echo ... Lab_5/main.s
+	@echo ... Lab_4/main.obj
+	@echo ... Lab_4/main.i
+	@echo ... Lab_4/main.s
 .PHONY : help
 
 
