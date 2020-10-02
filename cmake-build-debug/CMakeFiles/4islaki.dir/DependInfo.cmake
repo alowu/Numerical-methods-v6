@@ -4,7 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "H:/CLionLabs/Numerical-methods-v6/Lab_2/main.cpp" "H:/CLionLabs/Numerical-methods-v6/cmake-build-debug/CMakeFiles/4islaki.dir/Lab_2/main.cpp.obj"
+  "H:/CLionLabs/Numerical-methods-v6/Lab_4/main.cpp" "H:/CLionLabs/Numerical-methods-v6/cmake-build-debug/CMakeFiles/4islaki.dir/Lab_4/main.cpp.obj"
+  "H:/CLionLabs/Numerical-methods-v6/functions/common.cpp" "H:/CLionLabs/Numerical-methods-v6/cmake-build-debug/CMakeFiles/4islaki.dir/functions/common.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

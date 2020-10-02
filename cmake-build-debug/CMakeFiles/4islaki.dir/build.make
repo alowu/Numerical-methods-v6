@@ -76,32 +76,47 @@ include CMakeFiles/4islaki.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/4islaki.dir/flags.make
 
-CMakeFiles/4islaki.dir/Lab_2/main.cpp.obj: CMakeFiles/4islaki.dir/flags.make
-CMakeFiles/4islaki.dir/Lab_2/main.cpp.obj: ../Lab_2/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=H:\CLionLabs\Numerical-methods-v6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/4islaki.dir/Lab_2/main.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\4islaki.dir\Lab_2\main.cpp.obj -c H:\CLionLabs\Numerical-methods-v6\Lab_2\main.cpp
+CMakeFiles/4islaki.dir/Lab_4/main.cpp.obj: CMakeFiles/4islaki.dir/flags.make
+CMakeFiles/4islaki.dir/Lab_4/main.cpp.obj: ../Lab_4/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=H:\CLionLabs\Numerical-methods-v6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/4islaki.dir/Lab_4/main.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\4islaki.dir\Lab_4\main.cpp.obj -c H:\CLionLabs\Numerical-methods-v6\Lab_4\main.cpp
 
-CMakeFiles/4islaki.dir/Lab_2/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/4islaki.dir/Lab_2/main.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E H:\CLionLabs\Numerical-methods-v6\Lab_2\main.cpp > CMakeFiles\4islaki.dir\Lab_2\main.cpp.i
+CMakeFiles/4islaki.dir/Lab_4/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/4islaki.dir/Lab_4/main.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E H:\CLionLabs\Numerical-methods-v6\Lab_4\main.cpp > CMakeFiles\4islaki.dir\Lab_4\main.cpp.i
 
-CMakeFiles/4islaki.dir/Lab_2/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/4islaki.dir/Lab_2/main.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S H:\CLionLabs\Numerical-methods-v6\Lab_2\main.cpp -o CMakeFiles\4islaki.dir\Lab_2\main.cpp.s
+CMakeFiles/4islaki.dir/Lab_4/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/4islaki.dir/Lab_4/main.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S H:\CLionLabs\Numerical-methods-v6\Lab_4\main.cpp -o CMakeFiles\4islaki.dir\Lab_4\main.cpp.s
+
+CMakeFiles/4islaki.dir/functions/common.cpp.obj: CMakeFiles/4islaki.dir/flags.make
+CMakeFiles/4islaki.dir/functions/common.cpp.obj: ../functions/common.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=H:\CLionLabs\Numerical-methods-v6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/4islaki.dir/functions/common.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\4islaki.dir\functions\common.cpp.obj -c H:\CLionLabs\Numerical-methods-v6\functions\common.cpp
+
+CMakeFiles/4islaki.dir/functions/common.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/4islaki.dir/functions/common.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E H:\CLionLabs\Numerical-methods-v6\functions\common.cpp > CMakeFiles\4islaki.dir\functions\common.cpp.i
+
+CMakeFiles/4islaki.dir/functions/common.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/4islaki.dir/functions/common.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S H:\CLionLabs\Numerical-methods-v6\functions\common.cpp -o CMakeFiles\4islaki.dir\functions\common.cpp.s
 
 # Object files for target 4islaki
 4islaki_OBJECTS = \
-"CMakeFiles/4islaki.dir/Lab_2/main.cpp.obj"
+"CMakeFiles/4islaki.dir/Lab_4/main.cpp.obj" \
+"CMakeFiles/4islaki.dir/functions/common.cpp.obj"
 
 # External object files for target 4islaki
 4islaki_EXTERNAL_OBJECTS =
 
-4islaki.exe: CMakeFiles/4islaki.dir/Lab_2/main.cpp.obj
+4islaki.exe: CMakeFiles/4islaki.dir/Lab_4/main.cpp.obj
+4islaki.exe: CMakeFiles/4islaki.dir/functions/common.cpp.obj
 4islaki.exe: CMakeFiles/4islaki.dir/build.make
 4islaki.exe: CMakeFiles/4islaki.dir/linklibs.rsp
 4islaki.exe: CMakeFiles/4islaki.dir/objects1.rsp
 4islaki.exe: CMakeFiles/4islaki.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=H:\CLionLabs\Numerical-methods-v6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable 4islaki.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=H:\CLionLabs\Numerical-methods-v6\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable 4islaki.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\4islaki.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

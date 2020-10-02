@@ -80,7 +80,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="H:/CLionLabs/Numerical-methods-v6/Lab_2/main.cpp">
+		<Unit filename="H:/CLionLabs/Numerical-methods-v6/Lab_4/main.cpp">
+			<Option target="4islaki"/>
+		</Unit>
+		<Unit filename="H:/CLionLabs/Numerical-methods-v6/functions/common.cpp">
+			<Option target="4islaki"/>
+		</Unit>
+		<Unit filename="H:/CLionLabs/Numerical-methods-v6/functions/common.h">
 			<Option target="4islaki"/>
 		</Unit>
 		<Unit filename="H:/CLionLabs/Numerical-methods-v6/CMakeLists.txt">

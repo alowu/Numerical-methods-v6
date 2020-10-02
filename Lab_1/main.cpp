@@ -1,7 +1,4 @@
-#include <iostream>
-#include <iomanip>
-
-using namespace std;
+#include "../functions/common.h"
 
 /*
  * --!tests!--
@@ -33,13 +30,6 @@ using namespace std;
  1 1 3 4 -3
  */
 
-double **CreatingMatrix(int size) {
-    auto **A = new double *[size];
-    for (int i = 0; i < size; i++)
-        A[i] = new double[size];
-    return A;
-}
-
 void InputingOfTheSystem(double **matrix, double **copyM, double *vec, double *copyV, int size) {
     for (int i = 0; i < size; ++i) {
         cout << "input " << i + 1 << " row" << '\n';
@@ -63,76 +53,9 @@ void OutputingOfTheSystem(double **matrix, double *vec, int size) {
     cout << "----------------------------------------------\n";
 }
 
-void DeletingMatrix(double **X, int x) {
-    for (int i = 0; i < x; i++) {
-        delete X[i];
-    }
-    delete[] X;
-}
-
-double *GaussMethod(double **matrix, double *vec, int size) {
-    double *x, max;
-    int k, index;
-    const double eps = 1e-6;
-    x = new double[size];
-    k = 0;
-    while (k < size) {
-        max = abs(matrix[k][k]);
-        index = k;
-        for (int i = k + 1; i < size; i++) {
-            if (abs(matrix[i][k]) > max) {
-                max = abs(matrix[i][k]);
-                index = i;
-            }
-        }
-        double temp;
-        for (int j = 0; j < size; j++) {
-            temp = matrix[k][j];
-            matrix[k][j] = matrix[index][j];
-            matrix[index][j] = temp;
-        }
-        temp = vec[k];
-        vec[k] = vec[index];
-        vec[index] = temp;
-
-        for (int i = k; i < size; i++) {
-            temp = matrix[i][k];
-            if (abs(temp) < eps) continue;
-            for (int j = 0; j < size; j++) {
-                matrix[i][j] = matrix[i][j] / temp;
-            }
-            vec[i] = vec[i] / temp;
-            if (i == k) continue;
-            for (int j = 0; j < size; j++) {
-                matrix[i][j] = matrix[i][j] - matrix[k][j];
-            }
-            vec[i] = vec[i] - vec[k];
-        }
-        OutputingOfTheSystem(matrix, vec, size);
-        k++;
-    }
-
-    for (k = size - 1; k >= 0; k--) {
-        x[k] = vec[k];
-        for (int i = 0; i < k; i++)
-            vec[i] -= matrix[i][k] * x[k];
-    }
-    return x;
-}
-
 void OutputingRoots(double *roots, int size) {
     for (int i = 0; i < size; ++i) {
         cout << i + 1 << " root is " << roots[i] << '\n';
-    }
-}
-
-void MatrixMultiply(double **matrix, double *roots, double *res, int size) {
-    for (int i = 0; i < size; i++) {
-        double temp = 0;
-        for (int j = 0; j < size; j++) {
-            temp += matrix[i][j] * roots[j];
-        }
-        res[i] = temp;
     }
 }
 

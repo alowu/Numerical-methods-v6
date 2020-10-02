@@ -1,24 +1,7 @@
-#include <iostream>
-#include <iomanip>
-
-using namespace std;
+#include "../functions/common.h"
 
 const double M = 0.01;
 const int NIT = 100;
-
-double **CreatingMatrix(int n, int m) {
-    auto **A = new double *[n];
-    for (int i = 0; i < n; i++)
-        A[i] = new double[m];
-    return A;
-}
-
-void DeletingMatrix(double **X, int x) {
-    for (int i = 0; i < x; i++) {
-        delete X[i];
-    }
-    delete[] X;
-}
 
 double f1(double x1, double x2) {
     return (2 * x1 * x1 * x1 - x2 * x2 - 1);// v6
@@ -33,19 +16,23 @@ double f2(double x1, double x2) {
 }
 
 double func11(double x1, double x2) {
-    return (f1(x1 + M * x1, x2) - f1(x1, x2)) / M * x1;
+    //return (f1(x1 + M * x1, x2) - f1(x1, x2)) / M * x1;
+    return (f1(x1 + M, x2) - f1(x1, x2)) / M;
 }
 
 double func12(double x1, double x2) {
-    return (f1(x1, x2 + M * x2) - f1(x1, x2)) / M * x2;
+    //return (f1(x1, x2 + M * x2) - f1(x1, x2)) / M * x2;
+    return (f1(x1, x2 + M) - f1(x1, x2)) / M;
 }
 
 double func21(double x1, double x2) {
-    return (f2(x1 + M * x1, x2) - f2(x1, x2)) / M * x1;
+    //return (f2(x1 + M * x1, x2) - f2(x1, x2)) / M * x1;
+    return (f2(x1 + M, x2) - f2(x1, x2)) / M;
 }
 
 double func22(double x1, double x2) {
-    return (f2(x1, x2 + M * x2) - f2(x1, x2)) / M * x2;
+    //return (f2(x1, x2 + M * x2) - f2(x1, x2)) / M * x2;
+    return (f2(x1, x2 + M) - f2(x1, x2)) / M;
 }
 
 void nev(double *F, double x1, double x2) {
@@ -65,61 +52,6 @@ void JDiff(double **matrix, double x1, double x2) {
     matrix[0][1] = -2 * x2;
     matrix[1][0] = x2 * x2 * x2;
     matrix[1][1] = 3 * x1 * x2 * x2 - 1;
-}
-
-double *GaussMethod(double **matrix, double *vec, int size) {
-    double *x, max;
-    int k, index;
-    const double eps = 1e-6;
-    x = new double[size];
-    k = 0;
-    while (k < size) {
-        max = abs(matrix[k][k]);
-        index = k;
-        for (int i = k + 1; i < size; i++) {
-            if (abs(matrix[i][k]) > max) {
-                max = abs(matrix[i][k]);
-                index = i;
-            }
-        }
-        double temp;
-        for (int j = 0; j < size; j++) {
-            temp = matrix[k][j];
-            matrix[k][j] = matrix[index][j];
-            matrix[index][j] = temp;
-        }
-        temp = vec[k];
-        vec[k] = vec[index];
-        vec[index] = temp;
-
-        for (int i = k; i < size; i++) {
-            try {
-                temp = matrix[i][k];
-                //if (abs(temp) < eps) continue;
-                if (abs(temp) < eps) throw "IER = 1";
-            } catch (const char *msg) {
-                cout << msg << '\n';
-                exit(1);
-            }
-            for (int j = 0; j < size; j++) {
-                matrix[i][j] /= temp;
-            }
-            vec[i] /= temp;
-            if (i == k) continue;
-            for (int j = 0; j < size; j++) {
-                matrix[i][j] = matrix[i][j] - matrix[k][j];
-            }
-            vec[i] = vec[i] - vec[k];
-        }
-        k++;
-    }
-
-    for (k = size - 1; k >= 0; k--) {
-        x[k] = vec[k];
-        for (int i = 0; i < k; i++)
-            vec[i] -= matrix[i][k] * x[k];
-    }
-    return x;
 }
 
 double *NewtonMethod(const int SIZE, double x1, double x2) {
@@ -143,7 +75,7 @@ double *NewtonMethod(const int SIZE, double x1, double x2) {
 
     while (true) {
         nev(F, x1, x2);
-        JIter(Jak, x1, x2);
+        JDiff(Jak, x1, x2);
 
         for (int i = 0; i < SIZE; ++i) b[i] = F[i];
 

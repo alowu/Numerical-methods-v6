@@ -7,8 +7,18 @@
 #IncludeRegexTransform: 
 
 H:/CLionLabs/Numerical-methods-v6/Lab_2/main.cpp
+../functions/common.h
+H:/CLionLabs/Numerical-methods-v6/functions/common.h
+
+H:/CLionLabs/Numerical-methods-v6/functions/common.cpp
+common.h
+H:/CLionLabs/Numerical-methods-v6/functions/common.h
+
+H:/CLionLabs/Numerical-methods-v6/functions/common.h
 iostream
 -
 iomanip
+-
+cmath
 -
 

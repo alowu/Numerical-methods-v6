@@ -142,32 +142,59 @@ depend:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\4islaki.dir\build.make CMakeFiles/4islaki.dir/build
 .PHONY : 4islaki/fast
 
-Lab_2/main.obj: Lab_2/main.cpp.obj
+Lab_4/main.obj: Lab_4/main.cpp.obj
 
-.PHONY : Lab_2/main.obj
+.PHONY : Lab_4/main.obj
 
 # target to build an object file
-Lab_2/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\4islaki.dir\build.make CMakeFiles/4islaki.dir/Lab_2/main.cpp.obj
-.PHONY : Lab_2/main.cpp.obj
+Lab_4/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\4islaki.dir\build.make CMakeFiles/4islaki.dir/Lab_4/main.cpp.obj
+.PHONY : Lab_4/main.cpp.obj
 
-Lab_2/main.i: Lab_2/main.cpp.i
+Lab_4/main.i: Lab_4/main.cpp.i
 
-.PHONY : Lab_2/main.i
+.PHONY : Lab_4/main.i
 
 # target to preprocess a source file
-Lab_2/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\4islaki.dir\build.make CMakeFiles/4islaki.dir/Lab_2/main.cpp.i
-.PHONY : Lab_2/main.cpp.i
+Lab_4/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\4islaki.dir\build.make CMakeFiles/4islaki.dir/Lab_4/main.cpp.i
+.PHONY : Lab_4/main.cpp.i
 
-Lab_2/main.s: Lab_2/main.cpp.s
+Lab_4/main.s: Lab_4/main.cpp.s
 
-.PHONY : Lab_2/main.s
+.PHONY : Lab_4/main.s
 
 # target to generate assembly for a file
-Lab_2/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\4islaki.dir\build.make CMakeFiles/4islaki.dir/Lab_2/main.cpp.s
-.PHONY : Lab_2/main.cpp.s
+Lab_4/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\4islaki.dir\build.make CMakeFiles/4islaki.dir/Lab_4/main.cpp.s
+.PHONY : Lab_4/main.cpp.s
+
+functions/common.obj: functions/common.cpp.obj
+
+.PHONY : functions/common.obj
+
+# target to build an object file
+functions/common.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\4islaki.dir\build.make CMakeFiles/4islaki.dir/functions/common.cpp.obj
+.PHONY : functions/common.cpp.obj
+
+functions/common.i: functions/common.cpp.i
+
+.PHONY : functions/common.i
+
+# target to preprocess a source file
+functions/common.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\4islaki.dir\build.make CMakeFiles/4islaki.dir/functions/common.cpp.i
+.PHONY : functions/common.cpp.i
+
+functions/common.s: functions/common.cpp.s
+
+.PHONY : functions/common.s
+
+# target to generate assembly for a file
+functions/common.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\4islaki.dir\build.make CMakeFiles/4islaki.dir/functions/common.cpp.s
+.PHONY : functions/common.cpp.s
 
 # Help Target
 help:
@@ -178,9 +205,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... 4islaki
-	@echo ... Lab_2/main.obj
-	@echo ... Lab_2/main.i
-	@echo ... Lab_2/main.s
+	@echo ... Lab_4/main.obj
+	@echo ... Lab_4/main.i
+	@echo ... Lab_4/main.s
+	@echo ... functions/common.obj
+	@echo ... functions/common.i
+	@echo ... functions/common.s
 .PHONY : help
 
 
