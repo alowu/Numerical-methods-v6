@@ -3,7 +3,7 @@
 
 using namespace std;
 
-const double M = 0.5;
+const double M = 0.01;
 const int NIT = 100;
 
 double **CreatingMatrix(int n, int m) {
@@ -21,19 +21,15 @@ void DeletingMatrix(double **X, int x) {
 }
 
 double f1(double x1, double x2) {
-    return (2 * x1 * x1 * x1 - x2 * x2 - 1);
-<<<<<<< HEAD
+    return (2 * x1 * x1 * x1 - x2 * x2 - 1);// v6
     //return x1 * x1 * x1 + x2 * x2 * x2 - 6 * x1 + 3;//v5
-=======
->>>>>>> 0632ca1941db92ccecb1495735039535eb36e2b7
+    //return (x1 * x1 * x2 * x2 - 3 * x1 * x1 - 6 * x2 * x2 * x2 + 8);//v3
 }
 
 double f2(double x1, double x2) {
-    return (x1 * x2 * x2 * x2 - x2 - 4);
-<<<<<<< HEAD
+    return (x1 * x2 * x2 * x2 - x2 - 4);//v6
     //return x1 * x1 * x1 - x2 * x2 * x2 - 6 * x2 + 2;//v5
-=======
->>>>>>> 0632ca1941db92ccecb1495735039535eb36e2b7
+    //return (x1 * x1 * x1 * x1 - 9 * x2 + 2);//v3
 }
 
 double func11(double x1, double x2) {
@@ -53,8 +49,8 @@ double func22(double x1, double x2) {
 }
 
 void nev(double *F, double x1, double x2) {
-    F[0] = -f1(x1, x2);
-    F[1] = -f2(x1, x2);
+    F[0] = -1. * f1(x1, x2);
+    F[1] = -1. * f2(x1, x2);
 }
 
 void JIter(double **matrix, double x1, double x2) {
@@ -145,7 +141,7 @@ double *NewtonMethod(const int SIZE, double x1, double x2) {
     printf("|      x1   |      x2   |    delta1   |      delta2    | k \n");
     printf("-----------------------------------------------------------\n");
 
-    do {
+    while (true) {
         nev(F, x1, x2);
         JIter(Jak, x1, x2);
 
@@ -186,15 +182,11 @@ double *NewtonMethod(const int SIZE, double x1, double x2) {
             cout << msg << '\n';
             exit(2);
         }
-
-    } while (delta1 > EPS && delta2 > EPS);
+        if (delta1 <= EPS && delta2 <= EPS) break;
+    }
 
     DeletingMatrix(Jak, SIZE);
     delete[] F;
-<<<<<<< HEAD
-=======
-    delete[] roots;
->>>>>>> 0632ca1941db92ccecb1495735039535eb36e2b7
     delete[] delta;
     delete[] b;
 
