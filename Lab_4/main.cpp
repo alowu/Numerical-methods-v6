@@ -1,5 +1,5 @@
 #include <iostream>
-#include <iomanip>
+//include <iomanip>
 #include <fstream>
 #include <cmath>
 
@@ -110,6 +110,11 @@ int main() {
     enterMatrix(Datax, N, inx);
     enterMatrix(Datay, N, iny);
 
+    ofstream foun("H:/CLionLabs/Numerical-methods-v6/Lab_4/n.dat", ios_base::out | ios_base::trunc | ios_base::binary);
+    int n = N;
+    foun.write((char *)&n, sizeof n);
+    foun.close();
+
     double **A = createMatrix(m + 1);
 
     for (int i = 0; i < m + 1; i++) {
@@ -137,9 +142,30 @@ int main() {
 
     cout << "Sigma = " << sqrt(valueSigma(Datax, Datay, An, m + 1)) << endl;
 
+    double w;
+    ofstream foutx("H:/CLionLabs/Numerical-methods-v6/Lab_4/x.dat", ios_base::out | ios_base::trunc | ios_base::binary);
+    for (int i = 0; i < N; ++i) {
+        w = Datax[i];
+        foutx.write((char*)&w, sizeof w);
+    }
+    for (int i = 0; i < N; ++i) {
+        w = Datay[i];
+        foutx.write((char*)&w, sizeof w);
+    }
+    auto* newDatay = new double[N];
+    for (int i = 0; i < N; ++i) {
+        newDatay[i] = An[1] * Datax[i] + An[0];
+    }
+    for (int i = 0; i < N; ++i) {
+        w = newDatay[i];
+        foutx.write((char*)&w, sizeof w);
+    }
+    foutx.close();
+
     delete[] An;
     delete[] Datax;
     delete[] Datay;
+    delete[] newDatay;
     deleteMatrix(A, m + 1);
     deleteMatrix(copyA, m + 1);
 }

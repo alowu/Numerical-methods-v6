@@ -5,33 +5,25 @@ const int NIT = 100;
 
 double f1(double x1, double x2) {
     return (2 * x1 * x1 * x1 - x2 * x2 - 1);// v6
-    //return x1 * x1 * x1 + x2 * x2 * x2 - 6 * x1 + 3;//v5
-    //return (x1 * x1 * x2 * x2 - 3 * x1 * x1 - 6 * x2 * x2 * x2 + 8);//v3
 }
 
 double f2(double x1, double x2) {
     return (x1 * x2 * x2 * x2 - x2 - 4);//v6
-    //return x1 * x1 * x1 - x2 * x2 * x2 - 6 * x2 + 2;//v5
-    //return (x1 * x1 * x1 * x1 - 9 * x2 + 2);//v3
 }
 
 double func11(double x1, double x2) {
-    //return (f1(x1 + M * x1, x2) - f1(x1, x2)) / M * x1;
     return (f1(x1 + M, x2) - f1(x1, x2)) / M;
 }
 
 double func12(double x1, double x2) {
-    //return (f1(x1, x2 + M * x2) - f1(x1, x2)) / M * x2;
     return (f1(x1, x2 + M) - f1(x1, x2)) / M;
 }
 
 double func21(double x1, double x2) {
-    //return (f2(x1 + M * x1, x2) - f2(x1, x2)) / M * x1;
     return (f2(x1 + M, x2) - f2(x1, x2)) / M;
 }
 
 double func22(double x1, double x2) {
-    //return (f2(x1, x2 + M * x2) - f2(x1, x2)) / M * x2;
     return (f2(x1, x2 + M) - f2(x1, x2)) / M;
 }
 
