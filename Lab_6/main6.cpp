@@ -66,8 +66,29 @@ int main(int argc, char **argv) {
                     t1 = t0 + del;
                     T[j][i] = t1;
                     maxpvr(&t1, &del, &maxdel);
-                } //нижний правый угол Н
+                }//линия снизу G-F
+                else if (i >= i1 && i < i2 && j == j1) {
+                    tx = -(alf_3 * (T[j][i - 1] + T[j][i + 1]) + alf_1 * T[j + 1][i]) / gam_3;
+                    del = lam * (tx - t0);
+                    t1 = t0 + del;
+                    T[j][i] = t1;
+                    maxpvr(&t1, &del, &maxdel);
+                }//линия снизу E-D
+                else if (i >= i2 && i < i3 && j == j2) {
+                    tx = -(alf_3 * (T[j][i - 1] + T[j][i + 1]) + alf_1 * T[j + 1][i]) / gam_3;
+                    del = lam * (tx - t0);
+                    t1 = t0 + del;
+                    T[j][i] = t1;
+                    maxpvr(&t1, &del, &maxdel);
+                }//нижний правый угол Н
                 else if (i == i1 && j == 0) {
+                    tx = -(alf_3 * T[j][i - 1] + alf_4 * T[j + 1][i]) / gam_4;
+                    del = lam * (tx - t0);
+                    t1 = t0 + del;
+                    T[j][i] = t1;
+                    maxpvr(&t1, &del, &maxdel);
+                }//нижний правый угол F
+                else if (i == i2 && j == j1) {
                     tx = -(alf_3 * T[j][i - 1] + alf_4 * T[j + 1][i]) / gam_4;
                     del = lam * (tx - t0);
                     t1 = t0 + del;
@@ -80,27 +101,6 @@ int main(int argc, char **argv) {
                     t1 = t0 + del;
                     T[j][i] = t1;
                     maxpvr(&t1, &del, &maxdel);
-                } //внутренний угол без 4 G
-                else if (i == i1 && j == j1) {
-                    tx = -(alf_4 * T[j-1][i] + alf_2 * T[j][i-1] + alf_3 * T[j][i+1] + alf_1 * T[j+1][i]) / gam_2;
-                    del = lam * (tx - t0);
-                    t1 = t0 + del;
-                    T[j][i] = t1;
-                    maxpvr(&t1, &del, &maxdel);
-                }//линия снизу G-F
-                else if (i > i1 && i < i2 && j == j1) {
-                    tx = -(alf_3 * (T[j][i - 1] + T[j][i + 1]) + alf_1 * T[j + 1][i]) / gam_3;
-                    del = lam * (tx - t0);
-                    t1 = t0 + del;
-                    T[j][i] = t1;
-                    maxpvr(&t1, &del, &maxdel);
-                }//нижний правый угол F
-                else if (i == i2 && j == j1) {
-                    tx = -(alf_3 * T[j][i - 1] + alf_4 * T[j + 1][i]) / gam_4;
-                    del = lam * (tx - t0);
-                    t1 = t0 + del;
-                    T[j][i] = t1;
-                    maxpvr(&t1, &del, &maxdel);
                 }//вертикаль справа F-E
                 else if (i == i2 && j > j1 && j < j2) {
                     tx = -(alf_4 * (T[j - 1][i] + T[j + 1][i]) + alf_2 * T[j][i - 1]) / gam_3;
@@ -108,58 +108,52 @@ int main(int argc, char **argv) {
                     t1 = t0 + del;
                     T[j][i] = t1;
                     maxpvr(&t1, &del, &maxdel);
-                }//внутренний угол без 4 E
-                else if (i == i2 && j == j2) {
-                    tx = -(alf_4 * T[j-1][i] + alf_2 * T[j][i-1] + alf_3 * T[j][i+1] + alf_1 * T[j+1][i]) / gam_2;
+                }//внутренний угол без 4 G
+                else if (i == i1 && j == j1) {
+                    tx = -(alf_4 * T[j - 1][i] + alf_2 * T[j][i - 1] + alf_3 * T[j][i + 1] + alf_1 * T[j + 1][i]) /
+                         gam_2;
                     del = lam * (tx - t0);
                     t1 = t0 + del;
                     T[j][i] = t1;
                     maxpvr(&t1, &del, &maxdel);
-                }//линия снизу E-D
-                else if (i > i2 && i < i3 && j == j2) {
-                    tx = -(alf_3 * (T[j][i - 1] + T[j][i + 1]) + alf_1 * T[j + 1][i]) / gam_3;
+                }//внутренний угол без 4 E
+                else if (i == i2 && j == j2) {
+                    tx = -(alf_4 * T[j - 1][i] + alf_2 * T[j][i - 1] + alf_3 * T[j][i + 1] + alf_1 * T[j + 1][i]) /
+                         gam_2;
                     del = lam * (tx - t0);
                     t1 = t0 + del;
                     T[j][i] = t1;
                     maxpvr(&t1, &del, &maxdel);
                 }
-                //линия сверху между областью подачи температуры
-                if (i > i1 && i < i2 && j == j3) {
+                //1(левая)часть внутренней области
+                if (i > 0 && i < i1 && j > 0 && j <= j1) {
+                    tx = -(alf_1 * (T[j - 1][i] + T[j + 1][i]) + alf_2 * (T[j][i - 1] + T[j][i + 1]))
+                         / gam_1;
+                    del = lam * (tx - t0);
+                    t1 = t0 + del;
+                    T[j][i] = t1;
+                    maxpvr(&t1, &del, &maxdel);
+                }
+                //2(средняя)часть внутренней области
+                else if (i > 0 && i < i2 && j > j1 && j <= j2) {
+                    tx = -(alf_1 * (T[j - 1][i] + T[j + 1][i]) + alf_2 * (T[j][i - 1] + T[j][i + 1]))
+                         / gam_1;
+                    del = lam * (tx - t0);
+                    t1 = t0 + del;
+                    T[j][i] = t1;
+                    maxpvr(&t1, &del, &maxdel);
+                }
+                //3(правая)часть внутренней области
+                else if (i > 0 && i < i3 && j > j2 && j <= j3) {
+                    tx = -(alf_1 * (T[j - 1][i] + T[j + 1][i]) + alf_2 * (T[j][i - 1] + T[j][i + 1]))
+                         / gam_1;
+                    del = lam * (tx - t0);
+                    t1 = t0 + del;
+                    T[j][i] = t1;
+                    maxpvr(&t1, &del, &maxdel);
+                }//линия сверху между областью подачи температуры
+                if (i >= i1 && i < i2 && j == (j3 - 1)) {
                     tx = -(alf_3 * (T[j][i - 1] + T[j][i + 1]) + alf_1 * T[j - 1][i]) / gam_3;
-                    del = lam * (tx - t0);
-                    t1 = t0 + del;
-                    T[j][i] = t1;
-                    maxpvr(&t1, &del, &maxdel);
-                } /*else if (i == i1 && j == j1) {
-                    tx = -(alf_3 * T[j][i - 1] + alf_4 * T[j + 1][i] + alf_2 * T[j][i + 1] + alf_1 * T[j -
-                                                                                                       1][i]) / gam_2;
-                    del = lam * (tx - t0);
-                    t1 = t0 + del;
-                    T[j][i] = t1;
-                    maxpvr(&t1, &del, &maxdel);
-                } else if (i == i1 && j > j1 && j < j2) {
-                    tx = -(alf_4 * (T[j - 1][i] + T[j + 1][i]) + alf_2 * T[j][i + 1]) / gam_3;
-                    del = lam * (tx - t0);
-                    t1 = t0 + del;
-                    T[j][i] = t1;
-                    maxpvr(&t1, &del, &maxdel);
-                }*/ else if (i > 0 && i < i1 && j > 0 && j < j3) {
-                    tx = -(alf_1 * (T[j - 1][i] + T[j + 1][i]) + alf_2 * (T[j][i - 1] + T[j][i + 1]))
-                         / gam_1;
-                    del = lam * (tx - t0);
-                    t1 = t0 + del;
-                    T[j][i] = t1;
-                    maxpvr(&t1, &del, &maxdel);
-                } else if (i > i1 && i < i2 && j > j1 - 1 && j < j3) {
-                    tx = -(alf_1 * (T[j - 1][i] + T[j + 1][i]) + alf_2 * (T[j][i - 1] + T[j][i + 1]))
-                         / gam_1;
-                    del = lam * (tx - t0);
-                    t1 = t0 + del;
-                    T[j][i] = t1;
-                    maxpvr(&t1, &del, &maxdel);
-                } else if (i > i2 && i < i3 && j > j2 - 1 && j < j3) {
-                    tx = -(alf_1 * (T[j - 1][i] + T[j + 1][i]) + alf_2 * (T[j][i - 1] + T[j][i + 1]))
-                         / gam_1;
                     del = lam * (tx - t0);
                     t1 = t0 + del;
                     T[j][i] = t1;
