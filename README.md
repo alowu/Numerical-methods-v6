@@ -8,3 +8,4 @@ Lab titles:
   3. Solving systems of ordinary differential equations. Explicit Euler Method. Implicit Euler Method.
   4. Least-squares approximation of functions.
   5. Calculation of definite integrals. Trapezium formula. Simpson's formula. Simpson Cubature Formula.
+  6. Solution of the two-dimensional stationary heat equation.
